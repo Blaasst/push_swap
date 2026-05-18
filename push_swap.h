@@ -6,7 +6,7 @@
 /*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/17 13:01:44 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/18 15:31:59 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+int		find_max(t_stack	*b);
+void	put_top_b(t_stack	**b, int max);
 
 #endif
