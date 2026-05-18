@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 13:50:02 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/15 11:27:40 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/17 17:45:59 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	*fill_tab(char	**argv, int size)
 		return (NULL);
 	while (i < size)
 	{
-		tab[i] = ft_atoi(argv[i + 1]);
+		tab[i] = ft_atoi(argv[i]);
 		i++;
 	}
 	return (tab);
@@ -62,19 +62,19 @@ t_stack	**fill_stack(t_stack	**top, int *tab, int size)
 	int		i;
 	t_stack	*new;
 
-	i = 0;
-	while (i < size)
+	i = size - 1;
+	while (i >= 0)
 	{
 		new = ft_lstnew(tab[i]);
 		if (!new)
 		{
-			ft_lstclear(*top, del);
+			ft_lstclear(*top);
 			free(tab);
 			return (NULL);
 		}
 		new->next = *top;
 		*top = new;
-		i++;
+		i--;
 	}
 	return (top);
 }

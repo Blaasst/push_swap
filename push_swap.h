@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/15 11:27:01 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/17 13:01:44 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
+#include <limits.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include "libft.h"
 
 typedef struct s_stack
 {
@@ -21,6 +27,21 @@ typedef struct s_stack
 
 
 void	del(t_stack *node);
-
+int	*fill_tab(char	**argv, int size);
+int	ft_duplicate(int *tab, int size);
+t_stack	**fill_stack(t_stack	**top, int *tab, int size);
+int	ft_atoi(const char *nptr);
+int	valid_int(char	*nptr);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 10:55:48 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/15 11:25:34 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/17 17:40:42 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,5 @@ int	valid_int(char	*nptr)
 	if (nptr[i] != '\0')
 		return (0);
 	return (1);
-}
-
-void	del(t_stack *node)
-{
-	free(node->val);
-	return ;
 }
 
