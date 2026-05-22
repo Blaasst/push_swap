@@ -13,7 +13,7 @@ static void	rrotate(t_stack **top)
 	t_stack	*before_last;
 	t_stack	*last;
 
-	if(*top == NULL)
+	if (*top == NULL)
 		return ;
 	before_last = ft_blstlast(*top);
 	last = ft_lstlast(*top);
@@ -23,23 +23,34 @@ static void	rrotate(t_stack **top)
 	*top = last;
 }
 
-void	rra(t_stack **a)
+void	rra(t_stack **a, t_ops **count)
 {
+	t_ops	*operation;
+
 	rrotate(a);
-	write(1,"rra\n",4);
+	operation = ft_lstnew(8);
+	ft_lstadd_back(count, operation);
 }
 
-void	rrb(t_stack **b)
+
+void	rrb(t_stack **b, t_ops **count)
 {
+	t_ops	*operation;
+
 	rrotate(b);
-	write(1,"rrb\n",4);
+	operation = ft_lstnew(9);
+	ft_lstadd_back(count, operation);
 }
 
-void	rrr(t_stack **b, t_stack **a)
+
+void	rrr(t_stack **b, t_stack **a, t_ops **count)
 {
-	rrotate(b);
+	t_ops	*operation;
+
 	rrotate(a);
-	write(1,"rrr\n",4);
+	rrotate(b);
+	operation = ft_lstnew(10);
+	ft_lstadd_back(count, operation);
 }
 
 

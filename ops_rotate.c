@@ -5,7 +5,7 @@ static void	rotate(t_stack **top)
 	t_stack	*first;
 	t_stack	*last;
 
-	if(*top == NULL)
+	if (*top == NULL)
 		return ;
 	last = ft_lstlast(*top);
 	first = *top;
@@ -14,21 +14,30 @@ static void	rotate(t_stack **top)
 	first->next = NULL;
 }
 
-void	ra(t_stack **a)
+void	ra(t_stack **a, t_ops **count)
 {
+	t_ops	*operation;
+
 	rotate(a);
-	write(1,"ra\n",3);
+	operation = ft_lstnew(5);
+	ft_lstadd_back(count, operation);
 }
 
-void	rb(t_stack **b)
+void	rb(t_stack **b, t_ops **count)
 {
+	t_ops	*operation;
+
 	rotate(b);
-	write(1,"rb\n",3);
+	operation = ft_lstnew(6);
+	ft_lstadd_back(count, operation);
 }
 
-void	rr(t_stack **b, t_stack **a)
+void	rr(t_stack **b, t_stack **a, t_ops **count)
 {
+	t_ops	*operation;
+
 	rotate(b);
 	rotate(a);
-	write(1,"rr\n",3);
+	operation = ft_lstnew(7);
+	ft_lstadd_back(count, operation);
 }
