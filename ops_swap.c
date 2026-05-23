@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-
 static void	ft_swap(t_stack **top)
 {
 	t_stack	*first;
@@ -17,30 +16,30 @@ static void	ft_swap(t_stack **top)
 	*top = second;
 }
 
-void	sa(t_stack **a, t_ops **count)
+void	sa(t_data *data)
 {
 	t_ops	*operation;
 
-	ft_swap(a);
+	ft_swap(data->a);
 	operation = ft_lstnew(0);
-	ft_lstadd_back(count, operation);
+	ft_lstadd_back(&(data->ops), operation);
 }
 
-void	sb(t_stack **b,t_ops **count)
+void	sb(t_data *data)
 {
 	t_ops	*operation;
 
-	ft_swap(b);
+	ft_swap(data->b);
 	operation = ft_lstnew(1);
-	ft_lstadd_back(count,operation);
+	ft_lstadd_back(&(data->ops), operation);
 }
 
-void	ss(t_stack **b, t_stack **a,t_ops **count)
+void	ss(t_data *data)
 {
 	t_ops	*operation;
 
-	ft_swap(b);
-	ft_swap(a);
+	ft_swap(data->b);
+	ft_swap(data->a);
 	operation = ft_lstnew(2);
-	ft_lstadd_back(count,operation);
+	ft_lstadd_back(&(data->ops), operation);
 }

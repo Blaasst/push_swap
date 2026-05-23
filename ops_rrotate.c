@@ -23,34 +23,30 @@ static void	rrotate(t_stack **top)
 	*top = last;
 }
 
-void	rra(t_stack **a, t_ops **count)
+void	rra(t_data *data)
 {
 	t_ops	*operation;
 
-	rrotate(a);
+	rrotate(data->a);
 	operation = ft_lstnew(8);
-	ft_lstadd_back(count, operation);
+	ft_lstadd_back(&(data->ops), operation);
 }
 
-
-void	rrb(t_stack **b, t_ops **count)
+void	rrb(t_data *data)
 {
 	t_ops	*operation;
 
-	rrotate(b);
+	rrotate(data->b);
 	operation = ft_lstnew(9);
-	ft_lstadd_back(count, operation);
+	ft_lstadd_back(&(data->ops), operation);
 }
 
-
-void	rrr(t_stack **b, t_stack **a, t_ops **count)
+void	rrr(t_data *data)
 {
 	t_ops	*operation;
 
-	rrotate(a);
-	rrotate(b);
+	rrotate(data->a);
+	rrotate(data->b);
 	operation = ft_lstnew(10);
-	ft_lstadd_back(count, operation);
+	ft_lstadd_back(&(data->ops), operation);
 }
-
-

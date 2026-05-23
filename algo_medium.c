@@ -72,40 +72,40 @@ void	index(int *tab, t_stack **a, int size)
 
 }
 
-void	finish(t_stack	**a, t_stack **b)
+void	finish(t_data *data)
 {
 	int max;
 
-	while((*b) != NULL)
+	while((*data->b) != NULL)
 	{
-		max = find_max(*b);
-		put_top_b(b, max);
-		pa(a, b);
+		max = find_max(*data->b);
+		put_top_b(data->b, max);
+		pa(data);
 	}
 }
 
-void	medium(t_stack	**a, t_stack **b, int size, int *tab)
+void	medium(t_data *data, int size, int *tab)
 {
 	int high;
 	int low;
 
 	low = 0;
 	high = (size * 0.05) + 10;
-	index(tab, a, size);
-	while((*a) != NULL)
+	index(tab, data->a, size);
+	while((data->a) != NULL)
 	{
-		if((*a)->rank <= high)
+		if((*data->a)->rank <= high)
 		{
-			pb(a, b);
-			if(((*b)->rank) < low)
-				rb(b);
+			pb(data);
+			if(((*data->b)->rank) < low)
+				rb(data->b);
 			low++;
 			high++;
 		}
 		else
-			ra(a);
+			ra(data);
 	}
-	finish(a, b);
+	finish(data);
 }
 
 

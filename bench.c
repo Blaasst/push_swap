@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 08:30:21 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/22 11:35:35 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/23 17:39:27 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	benchmark(t_ops **ops, t_count *count)
+void	benchmark(t_ops **ops)
 {
+	t_count *count;
+	
 	ft_count(ops, count);
 	count->total_ops = ft_lstsize((*ops)) - 1;
 	printf("[bench] disorder: %lf%%\n"

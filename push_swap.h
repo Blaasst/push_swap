@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/23 12:39:26 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/23 18:25:47 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ typedef struct s_stack
 	char			*binaire;
 	struct s_stack	*next;
 }				t_stack;
-
+typedef struct s_type
+{
+	int	start;
+	int	type;
+	int	bench;
+}				t_type;
 typedef struct s_count
 {
 	double	disorder;
@@ -51,28 +56,39 @@ typedef struct s_ops
 	struct s_ops	*next;
 }				t_ops;
 
+typedef struct s_data
+{
+	t_stack	**a;
+	t_stack	**b;
+	t_ops	*ops;
+}				t_data;
 
 void	del(t_stack *node);
-int		*fill_tab(char	**argv, int size);
+int		*fill_tab(char	**argv, int size, int i);
 int		ft_duplicate(int *tab, int size);
+double	disorder(char **argv, int argc, t_type *type);
 t_stack	**fill_stack(t_stack	**top, int *tab, int size);
 int		ft_atoi(const char *nptr);
 int		valid_int(char	*nptr);
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **a, t_stack **b);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
-void	rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+void    sa(t_data *data);
+void    sb(t_data *data);
+void    ss(t_data *data);
+void    pa(t_data *data);
+void    pb(t_data *data);
+void    ra(t_data *data);
+void    rb(t_data *data);
+void    rr(t_data *data);
+void    rra(t_data *data);
+void    rrb(t_data *data);
+void    rrr(t_data *data);
 int		find_max(t_stack	*b);
 void	put_top_b(t_stack	**b, int max);
 int		count_total(t_ops	**ops, t_count *count);
 void	count_sub(t_ops	**ops, t_count *count);
 void	ft_count(t_ops	**ops, t_count *count);
+void	algo_simple(t_data *data);
+void	algo_medium(t_data *data, int *tab, int size);
+void	algo_complex(t_data *data, int *tab, int size);
+void	benchmark(t_ops **ops);
 
 #endif

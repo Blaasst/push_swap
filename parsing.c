@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 13:50:02 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/22 08:24:09 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/23 16:17:18 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,42 @@
 #include "libft.h"
 
 
-int	*fill_tab(char	**argv, int size)
+int	*fill_tab(char	**argv, int size, int i)
 {
-	int	i;
 	int	*tab;
+	int j;
 
-	i = 0;
+	j = 0;
 	tab = malloc(sizeof(int) * size);
 	if (!tab)
 		return (NULL);
-	while (i < size)
+	while (j < size)
 	{
-		tab[i] = ft_atoi(argv[i]);
+		tab[j] = ft_atoi(argv[i]);
 		i++;
+		j++;
 	}
 	return (tab);
 }
 
 int	ft_duplicate(int *tab, int size)
 {
-	int	i;
+	int i;
 	int	j;
 
-	j = 0;
-	i = j + 1;
-	while (j < size)
+	i = 0;
+	j = i + 1;
+	i = 0;
+	while (i < size)
 	{
-		while (i < size)
+		j = i + 1;
+		while (j < size)
 		{
 			if (tab[i] == tab[j])
-			{
-				free(tab);
-				return (NULL);
-			}
-			i++;
+				return (0);
+			j++;
 		}
-		j++;
-		i = j + 1;
+		i++;
 	}
 	return (1);
 }

@@ -1,29 +1,29 @@
 #include "push_swap.h"
 
-void	pb(t_stack **a, t_stack **b,t_ops	**count)
+void	pb(t_data *data)
 {
 	t_stack	*push;
 	t_ops	*operation;
 
-	if (*a == NULL)
+	if (*(data->a) == NULL)
 		return ;
-	push = *a;
-	*a = push->next;
-	ft_lstadd_front(b,push);
+	push = *(data->a);
+	*(data->a) = push->next;
+	ft_lstadd_front(data->b, push);
 	operation = ft_lstnew(4);
-	ft_lstadd_back(count, operation);
+	ft_lstadd_back(&(data->ops), operation);
 }
 
-void	pa(t_stack **a, t_stack **b, t_ops	**count)
+void	pa(t_data *data)
 {
 	t_stack	*push;
 	t_ops	*operation;
 
-	if (*b == NULL)
+	if (*(data->b) == NULL)
 		return ;
-	push = *b;
-	*b = push->next;
-	ft_lstadd_front(a, push);
+	push = *(data->b);
+	*(data->b) = push->next;
+	ft_lstadd_front(data->a, push);
 	operation = ft_lstnew(3);
-	ft_lstadd_back(count, operation);
+	ft_lstadd_back(&(data->ops), operation);
 }

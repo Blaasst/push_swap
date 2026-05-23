@@ -14,30 +14,30 @@ static void	rotate(t_stack **top)
 	first->next = NULL;
 }
 
-void	ra(t_stack **a, t_ops **count)
+void	ra(t_data *data)
 {
 	t_ops	*operation;
 
-	rotate(a);
+	rotate(data->a);
 	operation = ft_lstnew(5);
-	ft_lstadd_back(count, operation);
+	ft_lstadd_back(&(data->ops), operation);
 }
 
-void	rb(t_stack **b, t_ops **count)
+void	rb(t_data *data)
 {
 	t_ops	*operation;
 
-	rotate(b);
+	rotate(data->b);
 	operation = ft_lstnew(6);
-	ft_lstadd_back(count, operation);
+	ft_lstadd_back(&(data->ops), operation);
 }
 
-void	rr(t_stack **b, t_stack **a, t_ops **count)
+void	rr(t_data *data)
 {
 	t_ops	*operation;
 
-	rotate(b);
-	rotate(a);
+	rotate(data->b);
+	rotate(data->a);
 	operation = ft_lstnew(7);
-	ft_lstadd_back(count, operation);
+	ft_lstadd_back(&(data->ops), operation);
 }

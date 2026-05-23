@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_complex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 11:22:52 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/23 12:53:15 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/23 18:38:25 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,31 +116,31 @@ char	*print_binaire(int c)
 	return (result);
 }
 
-void	complex(t_stack	**a, t_stack **b, int size, int *tab)
+void	complex(t_data *data, int size, int *tab)
 {
 	int		stop;
 	t_stack	*first;
 
-	first = (*a);
-	stop = str_len(print_binaire(lst_size(a) - 1));
-	while ((*a)->next != NULL)
+	first = (*data->a);
+	stop = str_len(print_binaire(lst_size() - 1));
+	while ((*data->a)->next != NULL)
 	{
-		(*a)->binaire = print_binaire((*a)->rank);
-		(*a) = (*a)->next;
+		(*data->a)->binaire = print_binaire((*data->a)->rank);
+		(*data->a) = (*data->a)->next;
 	}
 	while (stop >= 0)
 	{
-		(*a) = first;
-		while ((*a)->next != NULL)
+		(*data->a) = first;
+		while ((*data->a)->next != NULL)
 		{
-			if ((*a)->binaire[stop] == 0)
-				pb(a, b);
+			if ((*data->a)->binaire[stop] == 0)
+				pb(data);
 			else
-				ra(a);
-			(*a) = (*a)->next;
+				ra(data);
+			(*data->a) = (*data->a)->next;
 		}
-		while ((*b) != NULL)
-			pa(a, b);
+		while ((*data->b) != NULL)
+			pa(data);
 		stop--;
 	}
 }

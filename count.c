@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:15:39 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/22 11:06:43 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/23 15:26:14 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ int	count_total(t_ops	**ops, t_count *count)
 		total++;
 		current = current->next;
 	}
-
+	return(total);
 
 }

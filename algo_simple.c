@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 13:38:55 by blast             #+#    #+#             */
-/*   Updated: 2026/05/22 08:23:37 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/23 18:26:42 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-int	find_min(t_stack	*a)
+int	find_min(t_stack    *a)
 {
 	int	min;
 	int		i;
@@ -58,45 +58,45 @@ void	put_top(t_stack	**a, int min)
 	}
 }
 
-void	last(t_stack **a)
+void	last(t_data *data)
 {
-	if((*a)->next->next == NULL)
+	if((*data->a)->next->next == NULL)
 	{
-		if((*a)->val > (*a)->next->val)
-			sa(a);
+		if((*data->a)->val > (*data->a)->next->val)
+			sa(data);
 		return ;
 	}
-	if((*a)->val < (*a)->next->val && (*a)->next->val < (*a)->next->next->val)
+	if((*data->a)->val < (*data->a)->next->val && (*data->a)->next->val < (*data->a)->next->next->val)
 		return ;
-	else if ((*a)->val > (*a)->next->val && (*a)->next->val > (*a)->next->next->val)
+	else if ((*data->a)->val > (*data->a)->next->val && (*data->a)->next->val > (*data->a)->next->next->val)
 		{
-			sa(a);
-			rra(a);
+			sa(data);
+			rra(data);
 		}
-	else if ((*a)->val > (*a)->next->val && (*a)->next->val < (*a)->next->next->val
-		&& (*a)->val > (*a)->next->next->val)
-			rra(a);
-	else if ((*a)->val > (*a)->next->val && (*a)->next->val < (*a)->next->next->val
-		&& (*a)->val < (*a)->next->next->val)
-			sa(a);
-	else if ((*a)->val < (*a)->next->val && (*a)->next->val > (*a)->next->next->val)
+	else if ((*data->a)->val > (*data->a)->next->val && (*data->a)->next->val < (*data->a)->next->next->val
+		&& (*data->a)->val > (*data->a)->next->next->val)
+			rra(data);
+	else if ((*data->a)->val > (*data->a)->next->val && (*data->a)->next->val < (*data->a)->next->next->val
+		&& (*data->a)->val < (*data->a)->next->next->val)
+			sa(data);
+	else if ((*data->a)->val < (*data->a)->next->val && (*data->a)->next->val > (*data->a)->next->next->val)
 		{
-			rra(a);
-			sa(a);
+			rra(data);
+			sa(data);
 		}
 }
 
-void	simple(t_stack **a, t_stack **b)
+void	simple(t_data *data)
 {
 	int	min;
 
-	while(ft_lstsize(*a) > 3)
+	while(ft_lstsize(*data->a) > 3)
 	{
-		min = find_min(*a);
-		put_top(a, min);
-		pb(a, b);
+		min = find_min(*data->a);
+		put_top(data->a, min);
+		pb(data);
 	}
-	last(a);
-	while(*b != NULL)
-		pa(a,b);
+	last(data);
+	while(data->b != NULL)
+		pa(data);
 }

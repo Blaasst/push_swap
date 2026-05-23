@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:19:47 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/20 09:01:27 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/23 16:11:11 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-double	disorder(char **argv, int argc)
+double	disorder(char **argv, int argc, t_type *type)
 {
 	int		i;
 	int		j;
@@ -21,7 +21,7 @@ double	disorder(char **argv, int argc)
 	double	mistakes;
 	int		*tab;
 
-	tab = fill_tab(argv, argc);
+	tab = fill_tab(argv, argc, type->start);
 	i = 0;
 	j = i + 1;
 	mistakes = 0;
