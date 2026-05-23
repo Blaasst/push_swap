@@ -3,12 +3,25 @@
 
 int main(int argc, char ** argv)
 {
-	int		i;
-	int		*tab;
 	t_stack	*top;
+	int		*tab;
 
-	i = 1;
 	top = NULL;
+	check(argc, argv, tab);
+	if(!fill_stack(&top, tab, argc - 1))
+	{
+		free(tab);
+		write(2,"Error\n", 6);
+		return(1);
+	}
+	free(tab);
+	ft_lstclear(&top);
+	return(0);
+}
+
+int *check(int argc, char ** argv, int *tab)
+ {
+	int i;
 	while (i < argc)
 	{
 		if(!valid_int(argv[i]))
@@ -25,13 +38,5 @@ int main(int argc, char ** argv)
 		write(2,"Error\n", 6);
 		return(1);
 	}
-	if(!fill_stack(&top, tab, argc - 1))
-	{
-		free(tab);
-		write(2,"Error\n", 6);
-		return(1);
-	}
-	free(tab);
-	ft_lstclear(&top);
-	return(0);
-}
+	return(tab);
+ }
