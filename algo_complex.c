@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 11:22:52 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/23 12:27:47 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/23 12:53:15 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void	complex(t_stack	**a, t_stack **b, int size, int *tab)
 		(*a)->binaire = print_binaire((*a)->rank);
 		(*a) = (*a)->next;
 	}
-	while (stop != 0)
+	while (stop >= 0)
 	{
 		(*a) = first;
 		while ((*a)->next != NULL)
