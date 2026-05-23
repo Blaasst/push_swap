@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:19:47 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/17 17:59:20 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/20 09:01:27 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ double	disorder(char **argv, int argc)
 	j = i + 1;
 	mistakes = 0;
 	total_pairs = 0;
-	while(i < argc)
+	while (i < argc)
 	{
 		while (j < argc)
 		{
-			if(tab[i] > tab[j])
+			if (tab[i] > tab[j])
 				mistakes += 1;
 			total_pairs += 1;
 			j++;
@@ -39,7 +39,7 @@ double	disorder(char **argv, int argc)
 		j = i + 1;
 	}
 	free(tab);
-	return(mistakes / total_pairs);
+	return (mistakes / total_pairs);
 }
 
 

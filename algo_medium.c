@@ -41,7 +41,7 @@ void	rank_stack(t_stack **a, int *tab_temp)
 		{
 			if(top->val == tab_temp[i])
 			{
-				top->val = i;
+				top->rank = i;
 				changed = 1;
 			}
 			i++;
@@ -94,10 +94,10 @@ void	medium(t_stack	**a, t_stack **b, int size, int *tab)
 	index(tab, a, size);
 	while((*a) != NULL)
 	{
-		if((*a)->val <= high)
+		if((*a)->rank <= high)
 		{
 			pb(a, b);
-			if(((*b)->val) < low)
+			if(((*b)->rank) < low)
 				rb(b);
 			low++;
 			high++;
