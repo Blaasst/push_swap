@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/23 12:24:24 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/23 12:36:41 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,30 @@ typedef struct s_stack
 	char			*binaire;
 	struct s_stack	*next;
 }				t_stack;
+
+typedef struct s_count
+{
+	double	disorder;
+	int		sa;
+	int		sb;
+	int		ss;
+	int		pa;
+	int		pb;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+	char	*strategy;
+	int		total_ops;
+}			t_count;
+
+typedef struct s_ops
+{
+	int				code;
+	struct s_ops	*next;
+}				t_ops;
 
 
 void	del(t_stack *node);
@@ -47,5 +71,8 @@ void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 int		find_max(t_stack	*b);
 void	put_top_b(t_stack	**b, int max);
+int		count_total(t_ops	**ops, t_count *count);
+void	count_sub(t_ops	**ops, t_count *count);
+void	ft_count(t_ops	**ops, t_count *count);
 
 #endif
