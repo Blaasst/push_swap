@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 15:55:09 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 09:58:49 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 11:02:41 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ t_ops	*ft_lstnew_ops(void *value);
 int		ft_lstsize_ops(t_ops *lst);
 void	ft_lstclear_data(t_data **lst);
 int		nbr_len(int n);
+size_t	ft_argvlen(char **c);
 
 #endif

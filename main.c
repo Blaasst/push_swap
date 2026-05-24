@@ -6,7 +6,7 @@
 /*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 09:51:44 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 10:58:56 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(int argc, char **argv)
 		write (2, "Error\n", 6);
 		return (1);
 	}
+	start(type, tab, data, argv);
 	free(tab);
 	ft_lstclear_data(data->a);
 	free(type);
@@ -83,7 +84,7 @@ int	*check(int argc, char **argv, int *tab, int i)
 		if (!valid_int(argv[i]))
 		{
 			write (2, "Error\n", 6);
-			return (1);
+			return (NULL);
 		}
 		i++;
 	}
@@ -92,7 +93,7 @@ int	*check(int argc, char **argv, int *tab, int i)
 	{
 		free(tab);
 		write (2, "Error\n", 6);
-		return (1);
+		return (NULL);
 	}
 	return (tab);
 }
@@ -113,10 +114,12 @@ void	choice(char **argv, int argc, t_type *type)
 	}
 }
 
-void	start(t_type *type, int *tab, t_data *data)
+void	start(t_type *type, int *tab, t_data *data, char **argv)
 {
-	int size;
+	int	size;
+	int	argc;
 
+	argc = ft_argvlen(argv);
 	size = ft_lstsize(data->a);
 	data->b = NULL;
 	data->ops = NULL;
@@ -127,6 +130,6 @@ void	start(t_type *type, int *tab, t_data *data)
 	else if (type->type == 3)
 		algo_complex(data, size, tab);
 	if (type->bench == 1)
-		benchmark(data->ops);
+		benchmark(data->ops, argv, argc, type);
 
 }
