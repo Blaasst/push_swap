@@ -6,12 +6,11 @@
 /*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 11:39:23 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 14:51:32 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 int	main(int argc, char **argv)
 {
@@ -52,8 +51,7 @@ int	main(int argc, char **argv)
 	choice(argv, argc, type);
 	start(type, tab, data, argv);
 	free(tab);
-	ft_lstclear(top_a);
-	ft_lstclear(top_b);
+	ft_lstclear_data(data);
 	free(type);
 	free(data);
 	return (0);
