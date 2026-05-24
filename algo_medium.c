@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 09:10:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 09:15:45 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 09:38:04 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	*sort_tab(int *tab, int size)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 	int	tmp;
 
 	i = 0;

@@ -5,16 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/24 09:37:30 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 09:37:31 by jait-ame         ###   ########.fr       */
+/*   Created: 2026/05/24 09:55:33 by jait-ame          #+#    #+#             */
+/*   Updated: 2026/05/24 09:55:34 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "push_swap.h"
 
 int	find_max(t_stack	*b)
 {
-	int	max;
+	int		max;
 	int		i;
 	int		ret;
 
