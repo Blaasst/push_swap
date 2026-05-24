@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 09:28:29 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 09:51:44 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,11 +121,11 @@ void	start(t_type *type, int *tab, t_data *data)
 	data->b = NULL;
 	data->ops = NULL;
 	if (type->type == 1)
-		simple(data->a, data->b);
+		algo_simple(data);
 	else if (type->type == 2)
-		medium(data->a, data->b, size, tab);
+		algo_medium(data, size, tab);
 	else if (type->type == 3)
-		complex(data->a, data->b, size, tab);
+		algo_complex(data, size, tab);
 	if (type->bench == 1)
 		benchmark(data->ops);
 

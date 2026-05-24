@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 09:16:48 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 09:43:08 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct s_data
 	t_ops	*ops;
 }				t_data;
 
-void	del(t_stack *node);
+
 int		*fill_tab(char	**argv, int size, int i);
 int		ft_duplicate(int *tab, int size);
 double	disorder(char **argv, int argc, t_type *type);
