@@ -6,7 +6,7 @@
 /*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 09:43:08 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 10:13:16 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ void	ft_count(t_ops	**ops, t_count *count);
 void	algo_simple(t_data *data);
 void	algo_medium(t_data *data, int size, int *tab);
 void	algo_complex(t_data *data, int size, int *tab);
-void	benchmark(t_ops **ops);
+void	benchmark(t_ops **ops, char **argv, int argc, t_type *type);
 
 #endif
