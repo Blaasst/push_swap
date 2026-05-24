@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_complex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 11:22:52 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 10:56:38 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 11:13:37 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*print_binaire(int c)
 	int		i;
 	char	*result;
 
+	i = 0;
+	result = malloc(sizeof(char) * 10);
 	while (c != 0)
 	{
 		result[i++] += c % 2;

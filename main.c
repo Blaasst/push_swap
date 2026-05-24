@@ -6,7 +6,7 @@
 /*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 10:58:56 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 11:09:28 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	}
 	start(type, tab, data, argv);
 	free(tab);
-	ft_lstclear_data(data->a);
+	ft_lstclear(data->a);
 	free(type);
 	free(data);
 	return (0);
