@@ -1,60 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   medium_sub.c                                       :+:      :+:    :+:   */
+/*   nbr_len.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/24 09:38:14 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 09:38:17 by edemay           ###   ########.fr       */
+/*   Created: 2026/05/24 09:19:03 by edemay            #+#    #+#             */
+/*   Updated: 2026/05/24 09:19:10 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	find_max(t_stack	*b)
+int	nbr_len(int n)
 {
-	int		max;
 	int		i;
-	int		ret;
+	long	j;
 
-	max = b->val;
+	j = n;
 	i = 0;
-	ret = 0;
-	while (b != NULL)
+	if (j < 0)
 	{
-		if (b->val > max)
-		{
-			max = b->val;
-			ret = i;
-		}
+		j = -j;
 		i++;
-		b = b->next;
 	}
-	return (ret);
-}
-
-void	put_top_b(t_stack	**b, int max)
-{
-	int	size;
-	int	dist;
-
-	size = ft_lstsize(*b);
-	dist = size - max;
-	if (max <= size / 2)
+	while (j > 0)
 	{
-		while (max != 0)
-		{
-			rb(b);
-			max--;
-		}
+		j = j / 10;
+		i++;
 	}
-	else
-	{
-		while (dist != 0)
-		{
-			rrb(b);
-			dist--;
-		}
-	}
+	return (i);
 }
