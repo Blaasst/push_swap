@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
+/*   Updated: 2026/05/24 09:28:29 by edemay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "libft.h"
 
-int main(int argc, char ** argv)
+int	main(int argc, char **argv)
 {
 	int		*tab;
 	t_type	*type;
@@ -21,84 +33,85 @@ int main(int argc, char ** argv)
 	type = flags(argc, argv, type);
 	tab = check(argc, argv, tab, type->start);
 
-	if(!fill_stack(data->a, tab, argc - type->start))
+	if (!fill_stack(data->a, tab, argc - type->start))
 	{
 		free(tab);
 		free(type);
 		free(data);
-		write(2,"Error\n", 6);
-		return(1);
+		write (2, "Error\n", 6);
+		return (1);
 	}
 	free(tab);
-	ft_lstclear(data->a);
+	ft_lstclear_data(data->a);
 	free(type);
 	free(data);
-	return(0);
+	return (0);
 }
-t_type	*flags(int argc, char ** argv, t_type *type)
+
+t_type	*flags(int argc, char **argv, t_type *type)
 {
-	int i;
+	int	i;
 
 	i = 1;
-	while(argv[i])
+	while (argv[i])
 	{
-		if(ft_strcmp(argv[i],"--simple") == 0)
+		if (ft_strcmp(argv[i],"--simple") == 0)
 			type->type = 1;
-		else if(ft_strcmp(argv[i],"--medium") == 0)
+		else if (ft_strcmp(argv[i],"--medium") == 0)
 			type->type = 2;
-		else if(ft_strcmp(argv[i],"--complex") == 0)
+		else if (ft_strcmp(argv[i],"--complex") == 0)
 			type->type = 3;
-		else if(ft_strcmp(argv[i],"--bench") == 0)
+		else if (ft_strcmp(argv[i],"--bench") == 0)
 			type->bench = 1;
-		if(ft_strncmp(argv[i],"--", 2) != 0)
+		if (ft_strncmp(argv[i],"--", 2) != 0)
 		{
 			type->start = i;
 			break ;
 		}
 		i++;
 	}
-	return(type);
+	return (type);
 }
 
-int *check(int argc, char ** argv, int *tab, int i)
- {
-	int start;
+int	*check(int argc, char **argv, int *tab, int i)
+{
+	int	start;
 
 	start = i;
 	while (i < argc)
 	{
-		if(!valid_int(argv[i]))
+		if (!valid_int(argv[i]))
 		{
-			write(2,"Error\n", 6);
-			return(1);
+			write (2, "Error\n", 6);
+			return (1);
 		}
 		i++;
 	}
 	tab = fill_tab(argv, argc - i, start);
-	if(!ft_duplicate(tab, argc - i))
+	if (!ft_duplicate(tab, argc - i))
 	{
 		free(tab);
-		write(2,"Error\n", 6);
-		return(1);
+		write (2, "Error\n", 6);
+		return (1);
 	}
-	return(tab);
- }
+	return (tab);
+}
 
- void	choice(char **argv, int argc, t_type *type)
- {
+void	choice(char **argv, int argc, t_type *type)
+{
 	double	dis;
 
-	if(type->type == 4)
+	if (type->type == 4)
 	{
 		dis = disorder(argv, argc, type);
-		if (dis  < 0.2)
+		if (dis < 0.2)
 			type->type = 1;
 		else if (dis > 0.2 && dis < 0.5)
 			type->type = 2;
-		else if (dis  >= 0.5)
+		else if (dis >= 0.5)
 			type->type = 3;
 	}
- }
+}
 
 void	start(t_type *type, int *tab, t_data *data)
 {
@@ -107,13 +120,13 @@ void	start(t_type *type, int *tab, t_data *data)
 	size = ft_lstsize(data->a);
 	data->b = NULL;
 	data->ops = NULL;
-	if(type->type == 1)
+	if (type->type == 1)
 		simple(data->a, data->b);
-	else if(type->type == 2)
+	else if (type->type == 2)
 		medium(data->a, data->b, size, tab);
-	else if(type->type == 3)
+	else if (type->type == 3)
 		complex(data->a, data->b, size, tab);
-	if(type->bench == 1)
+	if (type->bench == 1)
 		benchmark(data->ops);
 
 }

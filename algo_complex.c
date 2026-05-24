@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   algo_complex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 11:22:52 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/23 18:38:25 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/24 09:19:28 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 int	*sort_tab(int *tab, int size)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 	int	tmp;
 
 	i = 0;
 	j = 0;
-	while(i < size)
+	while (i < size)
 	{
 		j = i + 1;
-		while(j < size)
+		while (j < size)
 		{
-			if(tab[j] < tab[i])
+			if (tab[j] < tab[i])
 			{
 				tmp = tab[j];
 				tab[j] = tab[i];
@@ -35,23 +35,23 @@ int	*sort_tab(int *tab, int size)
 		}
 		i++;
 	}
-	return(tab);
+	return (tab);
 }
 
 void	rank_stack(t_stack **a, int *tab_temp)
 {
-	int i;
-	int	changed;
-	t_stack *top;
+	int		i;
+	int		changed;
+	t_stack	*top;
 
 	top = *a;
 	i = 0;
-	while(top != NULL)
+	while (top != NULL)
 	{
 		changed = 0;
-		while(!changed)
+		while (!changed)
 		{
-			if(top->val == tab_temp[i])
+			if (top->val == tab_temp[i])
 			{
 				top->rank = i;
 				changed = 1;
@@ -70,9 +70,9 @@ void	index(int *tab, t_stack **a, int size)
 
 	i = 0;
 	tab_temp = malloc(sizeof(int) * size);
-	if(!tab_temp)
+	if (!tab_temp)
 		return ;
-	while(i < size)
+	while (i < size)
 	{
 		tab_temp[i] = tab[i];
 		i++;
@@ -81,26 +81,6 @@ void	index(int *tab, t_stack **a, int size)
 	rank_stack(a, tab_temp);
 	free(tab_temp);
 
-}
-
-int	nbr_len(int n)
-{
-	int		i;
-	long	j;
-
-	j = n;
-	i = 0;
-	if (j < 0)
-	{
-		j = -j;
-		i++;
-	}
-	while (j > 0)
-	{
-		j = j / 10;
-		i++;
-	}
-	return (i);
 }
 
 char	*print_binaire(int c)
@@ -116,7 +96,7 @@ char	*print_binaire(int c)
 	return (result);
 }
 
-void	complex(t_data *data, int size, int *tab)
+void	algo_complex(t_data *data, int size, int *tab)
 {
 	int		stop;
 	t_stack	*first;

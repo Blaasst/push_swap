@@ -9,9 +9,9 @@ int	find_max(t_stack	*b)
 	max = b->val;
 	i = 0;
 	ret = 0;
-	while(b != NULL)
+	while (b != NULL)
 	{
-		if(b->val > max)
+		if (b->val > max)
 		{
 			max = b->val;
 			ret = i;
@@ -19,19 +19,19 @@ int	find_max(t_stack	*b)
 		i++;
 		b = b->next;
 	}
-	return(ret);
+	return (ret);
 }
 
 void	put_top_b(t_stack	**b, int max)
 {
-	int size;
-	int dist;
+	int	size;
+	int	dist;
 
 	size = ft_lstsize(*b);
 	dist = size - max;
 	if (max <= size / 2)
 	{
-		while(max != 0)
+		while (max != 0)
 		{
 			rb(b);
 			max--;
@@ -39,7 +39,7 @@ void	put_top_b(t_stack	**b, int max)
 	}
 	else
 	{
-		while(dist != 0)
+		while (dist != 0)
 		{
 			rrb(b);
 			dist--;

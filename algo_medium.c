@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo_medium.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/24 09:10:46 by edemay            #+#    #+#             */
+/*   Updated: 2026/05/24 09:15:45 by edemay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	*sort_tab(int *tab, int size)
@@ -8,12 +20,12 @@ int	*sort_tab(int *tab, int size)
 
 	i = 0;
 	j = 0;
-	while(i < size)
+	while (i < size)
 	{
 		j = i + 1;
-		while(j < size)
+		while (j < size)
 		{
-			if(tab[j] < tab[i])
+			if (tab[j] < tab[i])
 			{
 				tmp = tab[j];
 				tab[j] = tab[i];
@@ -23,23 +35,23 @@ int	*sort_tab(int *tab, int size)
 		}
 		i++;
 	}
-	return(tab);
+	return (tab);
 }
 
 void	rank_stack(t_stack **a, int *tab_temp)
 {
-	int i;
-	int	changed;
-	t_stack *top;
+	int		i;
+	int		changed;
+	t_stack	*top;
 
 	top = *a;
 	i = 0;
-	while(top != NULL)
+	while (top != NULL)
 	{
 		changed = 0;
-		while(!changed)
+		while (!changed)
 		{
-			if(top->val == tab_temp[i])
+			if (top->val == tab_temp[i])
 			{
 				top->rank = i;
 				changed = 1;
@@ -59,9 +71,9 @@ void	index(int *tab, t_stack **a, int size)
 
 	i = 0;
 	tab_temp = malloc(sizeof(int) * size);
-	if(!tab_temp)
+	if (!tab_temp)
 		return ;
-	while(i < size)
+	while (i < size)
 	{
 		tab_temp[i] = tab[i];
 		i++;
@@ -74,9 +86,9 @@ void	index(int *tab, t_stack **a, int size)
 
 void	finish(t_data *data)
 {
-	int max;
+	int	max;
 
-	while((*data->b) != NULL)
+	while ((*data->b) != NULL)
 	{
 		max = find_max(*data->b);
 		put_top_b(data->b, max);
@@ -84,20 +96,20 @@ void	finish(t_data *data)
 	}
 }
 
-void	medium(t_data *data, int size, int *tab)
+void	algo_medium(t_data *data, int size, int *tab)
 {
-	int high;
-	int low;
+	int	high;
+	int	low;
 
 	low = 0;
 	high = (size * 0.05) + 10;
 	index(tab, data->a, size);
-	while((data->a) != NULL)
+	while ((data->a) != NULL)
 	{
-		if((*data->a)->rank <= high)
+		if ((*data->a)->rank <= high)
 		{
 			pb(data);
-			if(((*data->b)->rank) < low)
+			if (((*data->b)->rank) < low)
 				rb(data->b);
 			low++;
 			high++;

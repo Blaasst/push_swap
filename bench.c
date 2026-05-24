@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 08:30:21 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/23 17:39:27 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/24 09:12:49 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	benchmark(t_ops **ops)
 {
-	t_count *count;
-	
+	t_count	*count;
+
 	ft_count(ops, count);
 	count->total_ops = ft_lstsize((*ops)) - 1;
 	printf("[bench] disorder: %lf%%\n"

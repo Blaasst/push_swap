@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 13:50:02 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/23 16:17:18 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/24 09:17:02 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int	*fill_tab(char	**argv, int size, int i)
 {
 	int	*tab;
-	int j;
+	int	j;
 
 	j = 0;
 	tab = malloc(sizeof(int) * size);
@@ -36,7 +36,7 @@ int	*fill_tab(char	**argv, int size, int i)
 
 int	ft_duplicate(int *tab, int size)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = 0;

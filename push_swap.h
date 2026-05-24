@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/23 18:25:47 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/24 09:16:48 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,25 @@ double	disorder(char **argv, int argc, t_type *type);
 t_stack	**fill_stack(t_stack	**top, int *tab, int size);
 int		ft_atoi(const char *nptr);
 int		valid_int(char	*nptr);
-void    sa(t_data *data);
-void    sb(t_data *data);
-void    ss(t_data *data);
-void    pa(t_data *data);
-void    pb(t_data *data);
-void    ra(t_data *data);
-void    rb(t_data *data);
-void    rr(t_data *data);
-void    rra(t_data *data);
-void    rrb(t_data *data);
-void    rrr(t_data *data);
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
+void	pa(t_data *data);
+void	pb(t_data *data);
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rr(t_data *data);
+void	rra(t_data *data);
+void	rrb(t_data *data);
+void	rrr(t_data *data);
 int		find_max(t_stack	*b);
 void	put_top_b(t_stack	**b, int max);
 int		count_total(t_ops	**ops, t_count *count);
 void	count_sub(t_ops	**ops, t_count *count);
 void	ft_count(t_ops	**ops, t_count *count);
 void	algo_simple(t_data *data);
-void	algo_medium(t_data *data, int *tab, int size);
-void	algo_complex(t_data *data, int *tab, int size);
+void	algo_medium(t_data *data, int size, int *tab);
+void	algo_complex(t_data *data, int size, int *tab);
 void	benchmark(t_ops **ops);
 
 #endif
