@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 13:50:02 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 09:17:02 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 12:23:26 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ t_stack	**fill_stack(t_stack	**top, int *tab, int size)
 		if (!new)
 		{
 			ft_lstclear(*top);
-			free(tab);
 			return (NULL);
 		}
 		new->next = *top;

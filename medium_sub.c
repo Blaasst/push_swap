@@ -6,7 +6,7 @@
 /*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 09:55:33 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 09:55:34 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 12:17:48 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ int	find_max(t_stack	*b)
 	return (ret);
 }
 
-void	put_top_b(t_stack	**b, int max)
+void	put_top_b(t_data *data, int max)
 {
 	int	size;
 	int	dist;
 
-	size = ft_lstsize(*b);
+	size = ft_lstsize((*data->b));
 	dist = size - max;
 	if (max <= size / 2)
 	{
 		while (max != 0)
 		{
-			rb(b);
+			rb(data);
 			max--;
 		}
 	}
@@ -55,7 +55,7 @@ void	put_top_b(t_stack	**b, int max)
 	{
 		while (dist != 0)
 		{
-			rrb(b);
+			rrb(data);
 			dist--;
 		}
 	}

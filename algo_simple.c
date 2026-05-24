@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 13:38:55 by blast             #+#    #+#             */
-/*   Updated: 2026/05/24 11:00:10 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 12:11:06 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ int	find_min(t_stack	*a)
 	return (ret);
 }
 
-void	put_top(t_stack	**a, int min)
+void	put_top(t_data	*data, int min)
 {
 	int	size;
 
-	size = ft_lstsize(*a);
+	size = ft_lstsize((*data->a));
 	if (min <= size / 2)
 	{
 		while (min != 0)
 		{
-			ra(a);
+			ra(data);
 			min--;
 		}
 	}
@@ -52,7 +52,7 @@ void	put_top(t_stack	**a, int min)
 	{
 		while (size - min != 0)
 		{
-			rra(a);
+			rra(data);
 			size--;
 		}
 	}
@@ -60,6 +60,8 @@ void	put_top(t_stack	**a, int min)
 
 void	last(t_data *data)
 {
+	if (ft_lstsize(*data->a) < 2)
+		return ;
 	if ((*data->a)->next->next == NULL)
 	{
 		if ((*data->a)->val > (*data->a)->next->val)
@@ -83,7 +85,7 @@ void	last2(t_data *data)
 	else if ((*data->a)->val > (*data->a)->next->val
 		&& (*data->a)->next->val < (*data->a)->next->next->val
 		&& (*data->a)->val > (*data->a)->next->next->val)
-		rra(data);
+		ra(data);
 	else if ((*data->a)->val > (*data->a)->next->val
 		&& (*data->a)->next->val < (*data->a)->next->next->val
 		&& (*data->a)->val < (*data->a)->next->next->val)
@@ -92,7 +94,8 @@ void	last2(t_data *data)
 		&& (*data->a)->next->val > (*data->a)->next->next->val)
 	{
 		rra(data);
-		sa(data);
+		if ((*data->a)->val > (*data->a)->next->val)
+			sa(data);
 	}
 }
 
@@ -103,10 +106,10 @@ void	algo_simple(t_data *data)
 	while (ft_lstsize(*data->a) > 3)
 	{
 		min = find_min(*data->a);
-		put_top(data->a, min);
+		put_top(data, min);
 		pb(data);
 	}
 	last(data);
-	while (data->b != NULL)
+	while (*data->b != NULL)
 		pa(data);
 }

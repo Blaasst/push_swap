@@ -6,7 +6,7 @@
 /*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 11:09:28 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 11:39:23 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 	t_stack	*top_a;
 	t_stack	*top_b;
 
+	if (argc == 1)
+		return (0);
 	top_a = NULL;
 	top_b = NULL;
 	type = malloc(sizeof(t_type) * 1);
@@ -30,9 +32,15 @@ int	main(int argc, char **argv)
 	data->ops = NULL;
 	type->type = 4;
 	type->bench = 0;
+	type->start = 1;
 	type = flags(argc, argv, type);
 	tab = check(argc, argv, tab, type->start);
-
+	if (tab == NULL)
+	{
+		free(type);
+		free(data);
+		return (1);
+	}
 	if (!fill_stack(data->a, tab, argc - type->start))
 	{
 		free(tab);
@@ -41,9 +49,11 @@ int	main(int argc, char **argv)
 		write (2, "Error\n", 6);
 		return (1);
 	}
+	choice(argv, argc, type);
 	start(type, tab, data, argv);
 	free(tab);
-	ft_lstclear(data->a);
+	ft_lstclear(top_a);
+	ft_lstclear(top_b);
 	free(type);
 	free(data);
 	return (0);
@@ -107,7 +117,7 @@ void	choice(char **argv, int argc, t_type *type)
 		dis = disorder(argv, argc, type);
 		if (dis < 0.2)
 			type->type = 1;
-		else if (dis > 0.2 && dis < 0.5)
+		else if (dis >= 0.2 && dis < 0.5)
 			type->type = 2;
 		else if (dis >= 0.5)
 			type->type = 3;
@@ -120,8 +130,7 @@ void	start(t_type *type, int *tab, t_data *data, char **argv)
 	int	argc;
 
 	argc = ft_argvlen(argv);
-	size = ft_lstsize(data->a);
-	data->b = NULL;
+	size = ft_lstsize(*(data->a));
 	data->ops = NULL;
 	if (type->type == 1)
 		algo_simple(data);
@@ -130,6 +139,6 @@ void	start(t_type *type, int *tab, t_data *data, char **argv)
 	else if (type->type == 3)
 		algo_complex(data, size, tab);
 	if (type->bench == 1)
-		benchmark(data->ops, argv, argc, type);
+		benchmark(&data->ops, argv, argc, type);
 
 }
