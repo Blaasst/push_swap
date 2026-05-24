@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 13:38:55 by blast             #+#    #+#             */
-/*   Updated: 2026/05/24 09:15:32 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 11:00:10 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,21 +66,30 @@ void	last(t_data *data)
 			sa(data);
 		return ;
 	}
+	last2(data);
+}
+
+void	last2(t_data *data)
+{
 	if ((*data->a)->val < (*data->a)->next->val
 		&& (*data->a)->next->val < (*data->a)->next->next->val)
 		return ;
-	else if ((*data->a)->val > (*data->a)->next->val && (*data->a)->next->val > (*data->a)->next->next->val)
+	else if ((*data->a)->val > (*data->a)->next->val
+		&& (*data->a)->next->val > (*data->a)->next->next->val)
 	{
 		sa(data);
 		rra(data);
 	}
-	else if ((*data->a)->val > (*data->a)->next->val && (*data->a)->next->val < (*data->a)->next->next->val
+	else if ((*data->a)->val > (*data->a)->next->val
+		&& (*data->a)->next->val < (*data->a)->next->next->val
 		&& (*data->a)->val > (*data->a)->next->next->val)
 		rra(data);
-	else if ((*data->a)->val > (*data->a)->next->val && (*data->a)->next->val < (*data->a)->next->next->val
+	else if ((*data->a)->val > (*data->a)->next->val
+		&& (*data->a)->next->val < (*data->a)->next->next->val
 		&& (*data->a)->val < (*data->a)->next->next->val)
 		sa(data);
-	else if ((*data->a)->val < (*data->a)->next->val && (*data->a)->next->val > (*data->a)->next->next->val)
+	else if ((*data->a)->val < (*data->a)->next->val
+		&& (*data->a)->next->val > (*data->a)->next->next->val)
 	{
 		rra(data);
 		sa(data);

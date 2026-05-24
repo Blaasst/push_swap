@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 13:35:15 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 09:45:13 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 10:54:06 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,13 @@ int	print_double(double n)
 
 	count = 0;
 	current = n;
+	current *= 100;
 	entier = current;
 	if (entier == 0)
-		write(1, "0", 1);
-		write(1, ",", 1);
+		write(1, "00,", 3);
+	else
+		count += ft_putnbr2(entier);
+	entier *= 100;
 	current *= 100;
 	decimal = current - entier;
 	count += ft_putnbr2(decimal);

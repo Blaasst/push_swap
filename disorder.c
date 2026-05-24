@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:19:47 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/23 16:11:11 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/24 10:45:39 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 double	disorder(char **argv, int argc, t_type *type)
 {
@@ -41,5 +40,3 @@ double	disorder(char **argv, int argc, t_type *type)
 	free(tab);
 	return (mistakes / total_pairs);
 }
-
-
