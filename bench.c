@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 08:30:21 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 10:59:13 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 15:31:19 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	benchmark(t_ops **ops, char **argv, int argc, t_type *type)
 
 	count = malloc(sizeof(t_count) * 1);
 	ft_count(ops, count);
-	count->total_ops = ft_lstsize((*ops)) - 1;
+	count->total_ops = ft_lstsize_ops((*ops)) - 1;
 	count->disorder = disorder(argv, argc, type);
 	ft_printf("[bench] disorder: %lf%%\n"
 		"[bench] strategy: %s\n"

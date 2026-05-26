@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 10:54:40 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 10:55:01 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 15:18:35 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	rank_stack(t_stack **a, int *tab_temp)
 	}
 }
 
-void	index(int *tab, t_stack **a, int size)
+void	indexer(int *tab, t_stack **a, int size)
 {
 	int	*tab_temp;
 	int	i;

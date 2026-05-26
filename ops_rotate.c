@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 09:14:04 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 09:14:06 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 15:39:00 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	ra(t_data *data)
 	t_ops	*operation;
 
 	rotate(data->a);
-	operation = ft_lstnew(5);
-	ft_lstadd_back(&(data->ops), operation);
+	operation = ft_lstnew_ops(5);
+	ft_lstadd_back_ops(&(data->ops), operation);
 }
 
 void	rb(t_data *data)
@@ -40,8 +40,8 @@ void	rb(t_data *data)
 	t_ops	*operation;
 
 	rotate(data->b);
-	operation = ft_lstnew(6);
-	ft_lstadd_back(&(data->ops), operation);
+	operation = ft_lstnew_ops(6);
+	ft_lstadd_back_ops(&(data->ops), operation);
 }
 
 void	rr(t_data *data)
@@ -50,6 +50,6 @@ void	rr(t_data *data)
 
 	rotate(data->b);
 	rotate(data->a);
-	operation = ft_lstnew(7);
-	ft_lstadd_back(&(data->ops), operation);
+	operation = ft_lstnew_ops(7);
+	ft_lstadd_back_ops(&(data->ops), operation);
 }

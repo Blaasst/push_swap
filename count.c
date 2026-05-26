@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:15:39 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 09:12:56 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/24 15:32:49 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	count_sub(t_ops	**ops, t_count *count)
 	}
 }
 
-int	count_total(t_ops	**ops, t_count *count)
+void	count_total(t_ops	**ops, t_count *count)
 {
 	t_ops	*current;
 	int		total;
@@ -70,6 +70,6 @@ int	count_total(t_ops	**ops, t_count *count)
 		total++;
 		current = current->next;
 	}
-	return (total);
+	count->total_ops = total;
 
 }

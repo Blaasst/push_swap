@@ -3,76 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 14:51:32 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 15:25:56 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
-{
-	int		*tab;
-	t_type	*type;
-	t_data	*data;
-	t_stack	*top_a;
-	t_stack	*top_b;
 
-	if (argc == 1)
-		return (0);
-	top_a = NULL;
-	top_b = NULL;
-	type = malloc(sizeof(t_type) * 1);
-	data = malloc(sizeof(t_data) * 1);
-	data->a = &top_a;
-	data->b = &top_b;
-	data->ops = NULL;
-	type->type = 4;
-	type->bench = 0;
-	type->start = 1;
-	type = flags(argc, argv, type);
-	tab = check(argc, argv, tab, type->start);
-	if (tab == NULL)
-	{
-		free(type);
-		free(data);
-		return (1);
-	}
-	if (!fill_stack(data->a, tab, argc - type->start))
-	{
-		free(tab);
-		free(type);
-		free(data);
-		write (2, "Error\n", 6);
-		return (1);
-	}
-	choice(argv, argc, type);
-	start(type, tab, data, argv);
-	free(tab);
-	ft_lstclear_data(data);
-	free(type);
-	free(data);
-	return (0);
-}
 
-t_type	*flags(int argc, char **argv, t_type *type)
+t_type	*flags(char **argv, t_type *type)
 {
 	int	i;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (ft_strcmp(argv[i],"--simple") == 0)
+		if (ft_strcmp(argv[i], "--simple") == 0)
 			type->type = 1;
-		else if (ft_strcmp(argv[i],"--medium") == 0)
+		else if (ft_strcmp(argv[i], "--medium") == 0)
 			type->type = 2;
-		else if (ft_strcmp(argv[i],"--complex") == 0)
+		else if (ft_strcmp(argv[i], "--complex") == 0)
 			type->type = 3;
-		else if (ft_strcmp(argv[i],"--bench") == 0)
+		else if (ft_strcmp(argv[i], "--bench") == 0)
 			type->bench = 1;
-		if (ft_strncmp(argv[i],"--", 2) != 0)
+		if (ft_strncmp(argv[i], "--", 2) != 0)
 		{
 			type->start = i;
 			break ;
@@ -82,9 +39,10 @@ t_type	*flags(int argc, char **argv, t_type *type)
 	return (type);
 }
 
-int	*check(int argc, char **argv, int *tab, int i)
+int	*check(int argc, char **argv, int i)
 {
 	int	start;
+	int	*tab;
 
 	start = i;
 	while (i < argc)
@@ -139,4 +97,49 @@ void	start(t_type *type, int *tab, t_data *data, char **argv)
 	if (type->bench == 1)
 		benchmark(&data->ops, argv, argc, type);
 
+}
+
+int	main(int argc, char **argv)
+{
+	int		*tab;
+	t_type	*type;
+	t_data	*data;
+	t_stack	*top_a;
+	t_stack	*top_b;
+
+	if (argc == 1)
+		return (0);
+	top_a = NULL;
+	top_b = NULL;
+	type = malloc(sizeof(t_type) * 1);
+	data = malloc(sizeof(t_data) * 1);
+	data->a = &top_a;
+	data->b = &top_b;
+	data->ops = NULL;
+	type->type = 4;
+	type->bench = 0;
+	type->start = 1;
+	type = flags(argv, type);
+	tab = check(argc, argv, type->start);
+	if (tab == NULL)
+	{
+		free(type);
+		free(data);
+		return (1);
+	}
+	if (!fill_stack(data->a, tab, argc - type->start))
+	{
+		free(tab);
+		free(type);
+		free(data);
+		write (2, "Error\n", 6);
+		return (1);
+	}
+	choice(argv, argc, type);
+	start(type, tab, data, argv);
+	free(tab);
+	ft_lstclear_data(data);
+	free(type);
+	free(data);
+	return (0);
 }

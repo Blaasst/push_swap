@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 13:50:02 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 12:23:26 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 15:42:36 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <stddef.h>
+
 #include "push_swap.h"
-#include "libft.h"
 
 
 int	*fill_tab(char	**argv, int size, int i)
@@ -67,7 +65,7 @@ t_stack	**fill_stack(t_stack	**top, int *tab, int size)
 		new = ft_lstnew(tab[i]);
 		if (!new)
 		{
-			ft_lstclear(*top);
+			ft_lstclear(top);
 			return (NULL);
 		}
 		new->next = *top;

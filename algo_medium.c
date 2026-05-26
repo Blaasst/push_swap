@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 09:10:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 12:20:22 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 15:33:44 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	algo_medium(t_data *data, int size, int *tab)
 
 	low = 0;
 	high = (size * 0.05) + 10;
-	index(tab, data->a, size);
+	indexer(tab, data->a, size);
 	while ((*data->a) != NULL)
 	{
 		if ((*data->a)->rank <= high)

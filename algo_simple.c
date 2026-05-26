@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 13:38:55 by blast             #+#    #+#             */
-/*   Updated: 2026/05/24 12:11:06 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/24 15:26:50 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,6 @@ void	put_top(t_data	*data, int min)
 	}
 }
 
-void	last(t_data *data)
-{
-	if (ft_lstsize(*data->a) < 2)
-		return ;
-	if ((*data->a)->next->next == NULL)
-	{
-		if ((*data->a)->val > (*data->a)->next->val)
-			sa(data);
-		return ;
-	}
-	last2(data);
-}
-
 void	last2(t_data *data)
 {
 	if ((*data->a)->val < (*data->a)->next->val
@@ -97,6 +84,19 @@ void	last2(t_data *data)
 		if ((*data->a)->val > (*data->a)->next->val)
 			sa(data);
 	}
+}
+
+void	last(t_data *data)
+{
+	if (ft_lstsize(*data->a) < 2)
+		return ;
+	if ((*data->a)->next->next == NULL)
+	{
+		if ((*data->a)->val > (*data->a)->next->val)
+			sa(data);
+		return ;
+	}
+	last2(data);
 }
 
 void	algo_simple(t_data *data)
