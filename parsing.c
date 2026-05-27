@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 13:50:02 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 15:42:36 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/27 15:54:02 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	*fill_tab(char	**argv, int size, int i)
 {
 	int	*tab;
 	int	j;
-
 	j = 0;
 	tab = malloc(sizeof(int) * size);
 	if (!tab)

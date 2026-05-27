@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:25:56 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/27 15:35:59 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	*check(int argc, char **argv, int i)
 		}
 		i++;
 	}
-	tab = fill_tab(argv, argc - i, start);
+	tab = fill_tab(argv, argc - start, start);
 	if (!ft_duplicate(tab, argc - i))
 	{
 		free(tab);
@@ -96,7 +96,8 @@ void	start(t_type *type, int *tab, t_data *data, char **argv)
 		algo_complex(data, size, tab);
 	if (type->bench == 1)
 		benchmark(&data->ops, argv, argc, type);
-
+	else
+		ft_print_ops(data->ops);
 }
 
 int	main(int argc, char **argv)

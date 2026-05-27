@@ -1,7 +1,7 @@
 #VARIABLES
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra 
 RM = rm -f
 SRC = main.c algo_simple.c  algo_medium.c algo_complex.c bench.c count.c disorder.c \
 		medium_sub.c ops_push.c ops_rotate.c ops_rrotate.c ops_swap.c parsing_utils.c parsing.c print_double.c \
