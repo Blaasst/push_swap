@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/28 13:31:52 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 23:46:48 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,9 @@ void	start(t_type *type, int *tab, t_data *data, char **argv)
 		algo_medium(data, size, tab);
 	else if (type->type == 3)
 		algo_complex(data, size, tab);
+	ft_print_ops(data->ops);
 	if (type->bench == 1)
 		benchmark(&data->ops, argv, argc, type);
-	else
-		ft_print_ops(data->ops);
 }
 
 int	main(int argc, char **argv)

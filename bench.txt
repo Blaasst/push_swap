@@ -1,5 +1,5 @@
-[bench] disorder: 40.00%
-[bench] strategy: adaptive
-[bench] total_ops: 13
-[bench] sa: 0  sb: 0  ss: 0  pa: 5  pb: 5
-[bench] ra: 0  rb: 2  rr: 0  rra: 0  rrb: 1  rrr: 0
+[bench] disorder: 51.57%
+[bench] strategy: complex
+[bench] total_ops: 200
+[bench] sa: 0  sb: 0  ss: 0  pa: 80  pb: 80
+[bench] ra: 40  rb: 0  rr: 0  rra: 0  rrb: 0  rrr: 0
