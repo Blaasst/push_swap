@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/27 15:35:59 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/28 11:38:48 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 t_type	*flags(char **argv, t_type *type)
 {
 	int	i;
 
 	i = 1;
+	type->type = 4;
 	while (argv[i])
 	{
 		if (ft_strcmp(argv[i], "--simple") == 0)
@@ -55,7 +54,7 @@ int	*check(int argc, char **argv, int i)
 		i++;
 	}
 	tab = fill_tab(argv, argc - start, start);
-	if (!ft_duplicate(tab, argc - i))
+	if (ft_duplicate(tab, argc - start) == 1)
 	{
 		free(tab);
 		write (2, "Error\n", 6);
@@ -68,8 +67,10 @@ void	choice(char **argv, int argc, t_type *type)
 {
 	double	dis;
 
+	type->adaptive = 0;
 	if (type->type == 4)
 	{
+		type->adaptive = 1;
 		dis = disorder(argv, argc, type);
 		if (dis < 0.2)
 			type->type = 1;
@@ -117,7 +118,6 @@ int	main(int argc, char **argv)
 	data->a = &top_a;
 	data->b = &top_b;
 	data->ops = NULL;
-	type->type = 4;
 	type->bench = 0;
 	type->start = 1;
 	type = flags(argv, type);

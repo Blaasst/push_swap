@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 10:54:40 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:18:35 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 11:13:30 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,4 @@ void	indexer(int *tab, t_stack **a, int size)
 	tab_temp = sort_tab(tab_temp, size);
 	rank_stack(a, tab_temp);
 	free(tab_temp);
-
 }

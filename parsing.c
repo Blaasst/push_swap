@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 13:50:02 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/27 15:54:02 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/28 11:16:37 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
-
 
 int	*fill_tab(char	**argv, int size, int i)
 {
 	int	*tab;
 	int	j;
+
 	j = 0;
 	tab = malloc(sizeof(int) * size);
 	if (!tab)
@@ -45,12 +44,12 @@ int	ft_duplicate(int *tab, int size)
 		while (j < size)
 		{
 			if (tab[i] == tab[j])
-				return (0);
+				return (1);
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 t_stack	**fill_stack(t_stack	**top, int *tab, int size)
@@ -73,7 +72,3 @@ t_stack	**fill_stack(t_stack	**top, int *tab, int size)
 	}
 	return (top);
 }
-
-
-
-

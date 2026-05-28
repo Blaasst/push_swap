@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:19:47 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/27 14:24:20 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/28 11:15:30 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ double	disorder(char **argv, int argc, t_type *type)
 	double	mistakes;
 	int		*tab;
 
-	tab = fill_tab(argv,  argc - type->start, type->start);
+	tab = fill_tab(argv, argc - type->start, type->start);
 	i = 0;
 	j = i + 1;
 	mistakes = 0;
 	total_pairs = 0;
-	while (i <  argc - type->start)
+	while (i < argc - type->start)
 	{
-		while (j <  argc - type->start)
+		while (j < argc - type->start)
 		{
 			if (tab[i] > tab[j])
 				mistakes += 1;

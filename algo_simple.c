@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/17 13:38:55 by blast             #+#    #+#             */
-/*   Updated: 2026/05/24 15:26:50 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 11:15:54 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	find_min(t_stack	*a)
 {

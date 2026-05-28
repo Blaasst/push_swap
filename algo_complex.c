@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_complex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 11:22:52 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/27 14:27:05 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/28 11:33:39 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,15 @@ int	*print_binaire(int c, int stop)
 	return (result);
 }
 
+void	ft_data(t_data *data, int stop)
+{
+	while ((*data->a) != NULL)
+	{
+		(*data->a)->binaire = print_binaire((*data->a)->rank, stop);
+		(*data->a) = (*data->a)->next;
+	}
+}
+
 void	algo_complex(t_data *data, int size, int *tab)
 {
 	int		stop;
@@ -51,11 +60,7 @@ void	algo_complex(t_data *data, int size, int *tab)
 	first = *(data->a);
 	indexer(tab, data->a, size);
 	stop = count_binaire(size - 1);
-	while ((*data->a) != NULL)
-	{
-		(*data->a)->binaire = print_binaire((*data->a)->rank, stop);
-		(*data->a) = (*data->a)->next;
-	}
+	ft_data(data, stop);
 	(*data->a) = first;
 	while (stop >= 0)
 	{

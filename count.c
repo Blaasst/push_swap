@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:15:39 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/24 15:32:49 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 11:16:06 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	ft_count(t_ops	**ops, t_count *count)
 		current = current->next;
 	}
 	count_sub(ops, count);
-
 }
 
 void	count_sub(t_ops	**ops, t_count *count)
@@ -64,12 +63,11 @@ void	count_total(t_ops	**ops, t_count *count)
 	int		total;
 
 	current = (*ops);
-	total = 0;
+	total = 8;
 	while (current != NULL)
 	{
 		total++;
 		current = current->next;
 	}
 	count->total_ops = total;
-
 }

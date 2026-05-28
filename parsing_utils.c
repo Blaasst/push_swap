@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 10:55:48 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/17 17:40:42 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/28 11:11:53 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include <stddef.h>
 #include "push_swap.h"
-
 
 int	ft_atoi(const char *nptr)
 {
@@ -68,4 +67,3 @@ int	valid_int(char	*nptr)
 		return (0);
 	return (1);
 }
-

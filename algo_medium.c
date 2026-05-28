@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 09:10:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:33:44 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 11:14:50 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,3 @@ void	algo_medium(t_data *data, int size, int *tab)
 	}
 	finish(data);
 }
-
-
-
-

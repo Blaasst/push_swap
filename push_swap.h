@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/27 15:36:30 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/28 11:13:09 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_type
 	int	start;
 	int	type;
 	int	bench;
+	int	adaptive;
 }				t_type;
 typedef struct s_count
 {
@@ -63,7 +64,6 @@ typedef struct s_data
 	t_stack	**b;
 	t_ops	*ops;
 }				t_data;
-
 
 int		*fill_tab(char	**argv, int size, int i);
 int		ft_duplicate(int *tab, int size);
