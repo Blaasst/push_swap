@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/28 12:15:53 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/28 12:41:20 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void	ft_lstclear_data(t_data *lst);
 int		ft_argvlen(char **c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
-void	ft_alloc(t_data *data, t_type *type, t_stack *top_a, t_stack *top_b);
+// void	ft_alloc(t_data *data, t_type *type, t_stack *top_a, t_stack *top_b);
 void	ft_free(t_data *data, t_type *type, int *tab);
 void	ft_end(int *tab, t_data *data, t_type *type);
 

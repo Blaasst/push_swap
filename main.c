@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 08:51:46 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/28 12:21:28 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/28 13:31:52 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ int	*check(int argc, char **argv, int i)
 	int	start;
 	int	*tab;
 
-	if (argc == 1)
-		return (NULL);
 	start = i;
 	while (i < argc)
 	{
@@ -111,20 +109,38 @@ int	main(int argc, char **argv)
 	t_stack	*top_a;
 	t_stack	*top_b;
 
+	if (argc == 1)
+		return (0);
 	top_a = NULL;
 	top_b = NULL;
 	type = malloc(sizeof(t_type) * 1);
 	data = malloc(sizeof(t_data) * 1);
-	ft_alloc(data, type, top_a, top_b);
+	data->a = &top_a;
+	data->b = &top_b;
+	data->ops = NULL;
+	type->bench = 0;
+	type->start = 1;
 	type = flags(argv, type);
 	tab = check(argc, argv, type->start);
+	if (tab == NULL)
+	{
+		free(type);
+		free(data);
+		return (1);
+	}
 	if (!fill_stack(data->a, tab, argc - type->start))
 	{
-		ft_free(data, type, tab);
+		free(tab);
+		free(type);
+		free(data);
+		write (2, "Error\n", 6);
 		return (1);
 	}
 	choice(argv, argc, type);
 	start(type, tab, data, argv);
-	ft_end(tab, data, type);
+	free(tab);
+	ft_lstclear_data(data);
+	free(type);
+	free(data);
 	return (0);
 }

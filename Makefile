@@ -1,5 +1,5 @@
 #VARIABLES
-NAME = a.out
+NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
