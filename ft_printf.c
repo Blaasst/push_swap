@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:53:39 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:54:39 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 11:52:13 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	prnt(const char *sentence, int i, va_list string, int count)
 		count += print_unsigned_int(va_arg(string, unsigned int));
 	else if (sentence[i] == 'x')
 		count += print_hexa_low(va_arg(string, unsigned int));
-	else if (sentence[i] == 'l' && sentence[i + 1] == 'f')
+	else if (sentence[i] == 'l')
 		count += print_double(va_arg(string, double));
 	else if (sentence[i] == 'X')
 		count += print_hexa_up(va_arg(string, unsigned int));

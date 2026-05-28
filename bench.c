@@ -6,7 +6,7 @@
 /*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 08:30:21 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/28 11:04:32 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/28 11:52:22 by jait-ame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	benchmark(t_ops **ops, char **argv, int argc, t_type *type)
 	count->total_ops = ft_lstsize_ops((*ops));
 	count->disorder = disorder(argv, argc, type);
 	strat(type, count);
-	ft_printf("[bench] disorder: %lf%%\n"
+	ft_printf("[bench] disorder: %l%%\n"
 		"[bench] strategy: %s\n"
 		"[bench] total_ops: %d\n"
 		"[bench] sa: %d  sb: %d  ss: %d  pa: %d  pb: %d\n"
