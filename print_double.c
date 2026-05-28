@@ -6,7 +6,7 @@
 /*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 13:35:15 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:08:39 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 11:53:02 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	print_double(double n)
 	entier *= 100;
 	current *= 100;
 	decimal = current - entier;
+	write(1, ",", 1);
 	count += ft_putnbr2(decimal);
 	return (count);
 }
