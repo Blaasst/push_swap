@@ -6,7 +6,7 @@
 /*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 11:16:51 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/28 22:05:12 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/28 23:10:03 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_putnbr2(int c)
 	minus = '-';
 	if (cl < 0)
 	{
-		write(1, &minus, 1);
+		write(2, &minus, 1);
 		cl = -cl;
 		count++;
 	}

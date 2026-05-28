@@ -6,7 +6,7 @@
 /*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:53:39 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/28 22:06:52 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/28 23:04:35 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	prnt(const char *sentence, int i, va_list string, int count)
 		count += print_hexa_up(va_arg(string, unsigned int));
 	else if (sentence[i] == '%')
 	{
-		write(1, "%", 1);
+		write(2, "%", 1);
 		count++;
 	}
 	return (count);
