@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_hexa_up.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 11:16:47 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:08:49 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 22:05:05 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	print_hexa_up(unsigned int n)
 	count++;
 	if (current >= 16)
 		count += print_hexa_up(current / 16);
-	write(1, &d, 1);
+	write(2, &d, 1);
 	return (count);
 }

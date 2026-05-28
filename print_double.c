@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_double.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 13:35:15 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/28 12:45:23 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 22:06:26 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_putnbr2(int c)
 	cl = c;
 	if (cl < 0)
 	{
-		write(1, "-", 1);
+		write(2, "-", 1);
 		cl = -cl;
 		count++;
 	}
@@ -33,7 +33,7 @@ static int	ft_putnbr2(int c)
 	{
 		count += ft_putnbr2(cl);
 	}
-	write(1, &d, 1);
+	write(2, &d, 1);
 	return (count);
 }
 
@@ -49,15 +49,15 @@ int	print_double(double n)
 	current *= 100;
 	entier = current;
 	if (entier == 0)
-		write(1, "00.", 3);
+		write(2, "00.", 3);
 	else
 		count += ft_putnbr2(entier);
 	entier *= 100;
 	current *= 100;
 	decimal = current - entier;
-	write(1, ".", 1);
+	write(2, ".", 1);
 	if (decimal == 0)
-		write(1, "00", 2);
+		write(2, "00", 2);
 	else
 		count += ft_putnbr2(decimal);
 	return (count);

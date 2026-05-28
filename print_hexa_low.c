@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_hexa_low.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 11:16:43 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:08:44 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 22:05:00 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	print_hexa_low(unsigned int n)
 	count++;
 	if (current >= 16)
 		count += print_hexa_low(current / 16);
-	write(1, &d, 1);
+	write(2, &d, 1);
 	return (count);
 }

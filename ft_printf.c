@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jait-ame <jait-ame@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:53:39 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/28 11:52:13 by jait-ame         ###   ########.fr       */
+/*   Updated: 2026/05/28 22:06:52 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_printf(const char *sentence, ...)
 		}
 		else
 		{
-			write(1, &sentence[i], 1);
+			write(2, &sentence[i], 1);
 			count++;
 		}
 		i++;

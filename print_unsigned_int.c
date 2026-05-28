@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_unsigned_int.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 11:17:01 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:09:07 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 22:05:45 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_putnbr1(unsigned int c)
 	{
 		count += ft_putnbr1(cl);
 	}
-	write(1, &d, 1);
+	write(2, &d, 1);
 	return (count);
 }
 

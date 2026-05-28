@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 11:16:54 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:09:00 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 22:05:32 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	print_hexa_l(long long unsigned n)
 	count++;
 	if (n >= 16)
 		count += print_hexa_l(n / 16);
-	write(1, &d, 1);
+	write(2, &d, 1);
 	return (count);
 }
 
@@ -35,7 +35,7 @@ int	print_pointer(long long unsigned n)
 	count = 2;
 	if (!n)
 		return (print_nil());
-	write(1, "0x", 2);
+	write(2, "0x", 2);
 	count += print_hexa_l((long long unsigned)n);
 	return (count);
 }

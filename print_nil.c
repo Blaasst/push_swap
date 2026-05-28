@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_nil.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 13:26:14 by edemay            #+#    #+#             */
-/*   Updated: 2026/05/24 15:08:57 by edemay           ###   ########.fr       */
+/*   Updated: 2026/05/28 22:05:22 by blast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	print_nil(void)
 {
-	write(1, "(nil)", 5);
+	write(2, "(nil)", 5);
 	return (5);
 }
 
 int	print_null(void)
 {
-	write(1, "(null)", 6);
+	write(2, "(null)", 6);
 	return (6);
 }
