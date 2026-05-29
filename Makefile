@@ -9,7 +9,7 @@ SRC = main.c algo_simple.c  algo_medium.c algo_complex.c bench.c count.c disorde
 		ft_lstclear_ops.c ft_lstclear.c ft_lstlast_ops.c ft_lstlast.c ft_lstnew_ops.c ft_printf.c ft_strncmp.c\
 		ft_lstnew.c ft_lstsize_ops.c ft_lstsize.c ft_print_list.c ft_strlen.c print_char.c\
 		print_hexa_low.c print_int.c print_nil.c print_pointer.c print_string.c print_unsigned_int.c print_hexa_up.c \
-		main_utils.c main_parsing.c
+		main_utils.c main_parsing.c ft_split.c \
 
 
 OBJECTS = $(SRC:%.c=%.o)

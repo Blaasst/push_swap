@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blast <blast@student.42.fr>                +#+  +:+       +#+        */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 10:20:43 by jait-ame          #+#    #+#             */
-/*   Updated: 2026/05/29 00:34:49 by blast            ###   ########.fr       */
+/*   Updated: 2026/05/29 09:39:50 by edemay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,12 +123,14 @@ void	ft_lstclear_data(t_data *lst);
 int		ft_argvlen(char **c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
-void	ft_alloc(t_data *data, t_type *type, t_stack *top_a, t_stack *top_b);
+void	init_structs(t_data *data, t_type *type);
 void	ft_free(t_data *data, t_type *type, int *tab);
 void	ft_end(int *tab, t_data *data, t_type *type);
-t_type	*flags(char **argv, t_type *type);
+t_type	*flags(char **argv, t_type *type, int is_split);
 int		*check(int argc, char **argv, int i);
 void	start(t_type *type, int *tab, t_data *data, char **argv);
 void	choice(char **argv, int argc, t_type *type);
+int		run_logic(char **args, t_data *data, t_type *type, int is_split);
+char	**ft_split(char const *s, char c);
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/29 09:11:22 by edemay            #+#    #+#             */
+/*   Updated: 2026/05/29 09:38:59 by edemay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	choice(char **argv, int argc, t_type *type)
@@ -44,11 +56,41 @@ void	ft_end(int *tab, t_data *data, t_type *type)
 	free(type);
 	free(data);
 }
-void	ft_alloc(t_data *data, t_type *type, t_stack *top_a, t_stack *top_b)
+
+void	init_structs(t_data *data, t_type *type)
 {
-	data->a = &top_a;
-	data->b = &top_b;
+	data->a = malloc(sizeof(t_stack *));
+	data->b = malloc(sizeof(t_stack *));
+	*(data->a) = NULL;
+	*(data->b) = NULL;
 	data->ops = NULL;
 	type->bench = 0;
 	type->start = 1;
+}
+
+int	run_logic(char **args, t_data *data, t_type *type, int is_split)
+{
+	int	*tab;
+	int	argc;
+
+	argc = ft_argvlen(args);
+	type = flags(args, type, is_split);
+	tab = check(argc, args, type->start);
+	if (!tab || !fill_stack(data->a, tab, argc - type->start))
+	{
+		free(tab);
+		free(type);
+		free(data);
+		write (2, "Error\n", 6);
+		return (0);
+	}
+	choice(args, argc, type);
+	start(type, tab, data, args);
+	free(tab);
+	ft_lstclear_data(data);
+	free(type);
+	free(data);
+	if (is_split)
+		free(args);
+	return (1);
 }

@@ -1,10 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_parsing.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edemay <edemay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/29 09:11:12 by edemay            #+#    #+#             */
+/*   Updated: 2026/05/29 09:39:25 by edemay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-t_type	*flags(char **argv, t_type *type)
+t_type	*flags(char **argv, t_type *type, int is_split)
 {
 	int	i;
 
 	i = 1;
+	if (is_split)
+		i = 0;
 	type->type = 4;
 	while (argv[i])
 	{
